@@ -1,0 +1,50 @@
+.headerLogo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    --background: rgba(0, 0, 0, .85);
+    --size: 10px;
+    background-image:
+            linear-gradient(to right, var(--background) var(--size), transparent var(--size)),
+            linear-gradient(to bottom, var(--background) var(--size), transparent var(--size)),
+            linear-gradient(to right, var(--background) var(--size), transparent var(--size)),
+            linear-gradient(to bottom, var(--background) var(--size), transparent var(--size)),
+            linear-gradient(to bottom, transparent var(--size), var(--background) var(--size));
+    background-size: calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), calc(var(--size) * 2) var(--size), 100% calc(100% - var(--size) * 3);
+    background-repeat: repeat-x;
+    background-position: 0 var(--size), top left, 0 calc(100% - var(--size)), bottom left, 0 var(--size);
+    padding: calc(var(--size) * 3) calc(var(--size) * 2.5);
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+.searchInput {
+    border: 0;
+    border-radius: 3px;
+    font: 14px roboto, sans-serif;
+    outline: none;
+    padding: 10px 20px;
+    width: 400px;
+}
+.searchButton{
+    padding: 11px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #ff4f12;
+}
+.logButton{
+    padding: 11px 20px;
+    margin-right: 7px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #ff4f12;
+}
+.navMenu{
+    text-align: center;
+    background-color:#222 ;
+    display: flex;
+    justify-content:space-evenly;
+    padding-top: 10px;
+}
