@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import './style.css'
+import {Link} from "react-router-dom";
 const MovieList = () => {
     const [movies,setMovies] = useState([])
     const [next,setNext] = useState(1)
@@ -31,15 +32,19 @@ const MovieList = () => {
                     movies.map((movie) =>{
                         return(
                             <div className={'col-3'} key={movie.id}>
-                                <div className="box">
-                                    <img
-                                        className={'img-popular'}
-                                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                                        alt=""/>
-                                    <div className={'info'}>
-                                        <h3 style={{marginTop:'0px',fontSize:'22px',color:'white'}}>{movie.title}</h3>
+                                <Link to={`/show-movie/${movie.id}`}>
+                                    <div className="box">
+                                        <img
+                                            className={'img-popular'}
+                                            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                                            alt=""/>
+                                        <div className={'info'}>
+
+                                            <h3 style={{marginTop:'0px',fontSize:'22px',color:'white'}}>{movie.title}</h3>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
+
                             </div>
                         )
                     })
