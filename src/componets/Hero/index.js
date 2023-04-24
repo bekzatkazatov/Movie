@@ -12,7 +12,7 @@ import './style.css'
 const Hero = () => {
     const [movies,setMovies] = useState([])
     useEffect(() =>{
-        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=7f7ff843e3ed2f93a548e15db507c48f&page=2')
+        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=7f7ff843e3ed2f93a548e15db507c48f&language=ru-US&page=2')
             .then(({data}) =>{
                 console.log(data.results)
                 setMovies(data.results)
@@ -43,7 +43,7 @@ const Hero = () => {
                                     <img
                                         src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
                                         alt=""/>
-                                    <h3 style={{color:"white",fontFamily:'Murecho',fontSize:'30px',margin:'0'}}>{movie.original_title}</h3>
+                                    <h3 style={{color:"white",fontFamily:'Murecho',fontSize:'30px',margin:'0'}}>{movie.title}</h3>
                                 </div>
                             </SwiperSlide>
 

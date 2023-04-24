@@ -18,7 +18,7 @@ function Header() {
                 <div className="search">
                     <input className='searchInput' type="text"
                     placeholder="поиск фильмов"/>
-                    <button className='searchButton'>search</button>
+                    <button className='searchButton'>Поиск</button>
                 </div>
                 <div className="sign-up">
                     <button className='logButton'>sign up</button>
@@ -27,9 +27,11 @@ function Header() {
             </div>
             <nav className='navMenu'>
                 <a href="/">HOME</a>
-                <a href="/MovieList">POPULAR</a>
-                <a href="/latest-page">NEW</a>
-                <a href="/page">LIST</a>
+                <a href="/MovieList">Популярные</a>
+                <a href="/page">Фильмы</a>
+                <a href="/Tvshows">Сериалы</a>
+                <a href="/People">Люди</a>
+
             </nav>
         </header>
     );

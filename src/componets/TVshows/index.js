@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
-const TopRated = () => {
 
+const Tvshows = () => {
     const [movies,setMovies] = useState([])
     const [next,setNext] = useState(1)
     useEffect(() =>{
-        axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=7f7ff843e3ed2f93a548e15db507c48f&language=ru-US&page=${next}`)
+        axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=7f7ff843e3ed2f93a548e15db507c48f&language=ru-US&page=${next}`)
             .then(({data}) =>{
                 console.log(data.results)
                 setMovies(data.results)
@@ -22,23 +22,22 @@ const TopRated = () => {
     }
     return (
         <div>
-            <div style={{display:'flex',justifyContent:'space-between',padding: '25px 10px'}}>
+            <div style={{display:'flex',justifyContent:'space-between',padding:'25px 10px'}}>
                 <button className="PopButton"   disabled={next ===1 ?true: ''} onClick={prevPage}>Пред.</button>
-                <h2 style={{margin:'5px',color:'white',fontSize:'28px'}}>Самые Популярные</h2>
                 <button className="PopButton"  disabled={next===500?true: ''} onClick={nextPage}>След.</button>
             </div>
             <div className={'row'}>
                 {
-                    movies.map((movie) =>{
+                    movies.map((person) =>{
                         return(
-                            <div className={'col-3'} key={movie.id}>
+                            <div className={'col-3'} key={person.id}>
                                 <div className="box">
                                     <img
                                         className={'img-popular'}
-                                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                                        src={`https://image.tmdb.org/t/p/w500/${person.poster_path}`}
                                         alt=""/>
                                     <div className={'info'}>
-                                        <h3 style={{marginTop:'0px',fontSize:'22px',color:'white'}}>{movie.title}</h3>
+                                        <h3 style={{marginTop:'0px',fontSize:'22px',color:'white'}}>{person.name}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -49,4 +48,5 @@ const TopRated = () => {
         </div>
     );
 };
-export default TopRated;
+
+export default Tvshows;

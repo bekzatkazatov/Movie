@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
 import './style.css'
 const MovieList = () => {
-
     const [movies,setMovies] = useState([])
     const [next,setNext] = useState(1)
     useEffect(() =>{
-        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=7f7ff843e3ed2f93a548e15db507c48f&language=en-US&page=${next}`)
+        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=7f7ff843e3ed2f93a548e15db507c48f&language=ru-US&page=${next}`)
             .then(({data}) =>{
                 console.log(data.results)
                 setMovies(data.results)
@@ -23,9 +21,10 @@ const MovieList = () => {
     }
     return (
         <div>
-            <div style={{display:'flex',justifyContent:'space-between',paddingTop:'20px'}}>
-                <button className="PopButton"   disabled={next ===1 ?true: ''} onClick={prevPage}>prev</button>
-                <button className="PopButton"  disabled={next===500?true: ''} onClick={nextPage}>next</button>
+            <div style={{display:'flex',justifyContent:'space-between',padding:'25px 10px'}}>
+                <button className="PopButton"   disabled={next ===1 ?true: ''} onClick={prevPage}>Пред.</button>
+                <h2 style={{margin:'5px',color:'white',fontSize:'28px'}}>Популярные</h2>
+                <button className="PopButton"  disabled={next===500?true: ''} onClick={nextPage}>След.</button>
             </div>
             <div className={'row'}>
                 {
@@ -38,7 +37,7 @@ const MovieList = () => {
                                         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                                         alt=""/>
                                     <div className={'info'}>
-                                        <h3 style={{marginTop:'0px',fontFamily:'Murecho',color:'white'}}>{movie.original_title}</h3>
+                                        <h3 style={{marginTop:'0px',fontSize:'22px',color:'white'}}>{movie.title}</h3>
                                     </div>
                                 </div>
                             </div>

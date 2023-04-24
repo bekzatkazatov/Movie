@@ -33,6 +33,7 @@
     border-radius: 5px;
     border: 0;
     background-color: #ff4f12;
+    cursor: pointer;
 }
 .logButton{
     padding: 11px 20px;
