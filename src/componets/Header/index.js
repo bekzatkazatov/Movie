@@ -26,7 +26,7 @@ function Header() {
         <header>
             <div className='headerLogo'>
                 <div className={'sidebar'}>
-                    <h3 style={{color: 'white', fontSize: '20px'}}>KiNOZONA</h3>
+                    <NavLink to="/"> <h3 style={{color: 'white', fontSize: '20px'}}>KiNOZONA</h3></NavLink>
                 </div>
 
                 <div className="search">
@@ -55,9 +55,9 @@ function Header() {
             </div>
             <nav className='navMenu'>
                 <NavLink to="/">HOME</NavLink>
-                <NavLink to={'/MovieList'}>Популярные</NavLink>
-                <NavLink to="/page">Фильмы</NavLink>
-                <NavLink to="/Tvshows">Сериалы</NavLink>
+                <NavLink to={'/Popular'}>Популярные</NavLink>
+                <NavLink to="/movie">Фильмы</NavLink>
+                <NavLink to="/Tv-shows">Сериалы</NavLink>
                 <NavLink to="/People">Люди</NavLink>
             </nav>
         </header>

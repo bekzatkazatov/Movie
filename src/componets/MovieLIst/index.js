@@ -24,7 +24,7 @@ const MovieList = () => {
         <div>
             <div style={{display:'flex',justifyContent:'space-between',padding:'25px 10px'}}>
                 <button className="PopButton"   disabled={next ===1 ?true: ''} onClick={prevPage}>Пред.</button>
-                <h2 style={{margin:'5px',color:'white',fontSize:'28px'}}>Популярные</h2>
+                <h2 style={{margin:'5px',color:'white',fontSize:'22px'}}>Популярные</h2>
                 <button className="PopButton"  disabled={next===500?true: ''} onClick={nextPage}>След.</button>
             </div>
             <div className={'row'}>

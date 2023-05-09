@@ -8,6 +8,7 @@ import People from "./componets/People";
 import Tvshows from "./componets/TVshows";
 import Home from "./componets/Home/index";
 import ShowMovie from "./componets/ShowMovie";
+import Movie from "./componets/Movie";
 
 
 function App() {
@@ -18,11 +19,12 @@ function App() {
                     <Header/>
                     <Routes>
                         <Route path={'/'} element={<Home/>}/>
-                        <Route path={'/MovieList'} element={<MovieList/>}/>
+                        <Route path={'/Popular'} element={<MovieList/>}/>
                         <Route path={'/People'} element={<People/>}/>
-                        <Route path={'/Tvshows'} element={<Tvshows/>}/>
+                        <Route path={'/Tv-shows'} element={<Tvshows/>}/>
                         <Route path={'/show-movie/:id'} element={<ShowMovie/>}/>
-                    </Routes>
+                        <Route path={'/movie'} element={<Movie/>}/>
+                        </Routes>
                 </BrowserRouter>
 
 
